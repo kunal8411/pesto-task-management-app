@@ -1,0 +1,62 @@
+
+
+/* TaskList.css */
+
+.task-list-container {
+  margin: 20px;
+}
+
+.task-list-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.task-list-container table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.task-list-container th,
+.task-list-container td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+.task-list-container th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333;
+}
+
+.task-list-container tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.task-list-container select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 84%;
+}
+
+.task-list-container-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #dc3545;
+  color: #fff;
+  cursor: pointer;
+}
+
+.task-list-container-button:hover {
+  background-color: #bd2130;
+}
+.select-component{
+  width: 10% !important;
+  margin-left: 1rem;
+}

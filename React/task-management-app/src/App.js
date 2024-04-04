@@ -1,17 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./components/Login/log-in.jsx";
+import HomePage from "./components/HomePage/HomePage.jsx";
+import SignUp from "./components/SignUp/SignUp.jsx";
+// import ProtectedRoute from './ProtectedRoute';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Pesto tech assessment
-        </p>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+      <Route path="/login" element={<Login />} />
+
+        <Route path="/" element={<HomePage />} />
+
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
