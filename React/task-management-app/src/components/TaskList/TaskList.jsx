@@ -1,12 +1,13 @@
 // TaskList.js
 import React, { useEffect, useState } from "react";
 import "./TaskList.css"; // Import CSS file for styling
-
+import { FiChevronUp, FiChevronDown } from "react-icons/fi";
 const TaskList = ({ tasks, updateTask, deleteTask }) => {
   const [isDeleteConfirm, setIsDeleteConfirm] = useState(false);
   const [deleteTaskId, setDeleteTaskId] = useState();
   const [allTasks, setTasks] = useState([]);
   const [filteredoption, setFilteredOption] = useState("");
+  const [sortDirection, setSortDirection] = useState(null);
   const onDeleteTask = (taskId) => {
     setDeleteTaskId(taskId);
     setIsDeleteConfirm(true);
@@ -25,6 +26,18 @@ const TaskList = ({ tasks, updateTask, deleteTask }) => {
     console.log({ filteredOptions });
     setTasks(filteredOptions);
   };
+  const handleSort = () => {
+    const sortedTasks = [...allTasks];
+    if (sortDirection === "asc") {
+      sortedTasks.sort((a, b) => a.title.localeCompare(b.title));
+      setSortDirection("desc");
+    } else {
+      sortedTasks.sort((a, b) => b.title.localeCompare(a.title));
+      setSortDirection("asc");
+    }
+    setTasks(sortedTasks);
+  };
+
 
   useEffect(() => {
     setTasks(tasks);
@@ -45,10 +58,17 @@ const TaskList = ({ tasks, updateTask, deleteTask }) => {
           <option value="Done">Done</option>
         </select>
       </div>
-      <table className="" style={{ width: "65%" }}>
+      <table className="">
         <thead>
           <tr>
-            <th>Title</th>
+          <th className="px-4 py-2" onClick={handleSort}>
+                Title{" "}
+                {sortDirection === "asc" ? (
+                  <FiChevronUp className="inline-block" />
+                ) : (
+                  <FiChevronDown className="inline-block" />
+                )}
+              </th>
             <th>Description</th>
             <th className="">Status</th>
             <th>Action</th>
