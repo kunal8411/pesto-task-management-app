@@ -49,14 +49,14 @@ npm start
 ## Features
 
 - **Create Task**: Users can create new tasks by providing a title, and description, and selecting a status.
-- **Update Task**: Tasks can be updated to change their title, description, or status.
+- **Update Task**: Tasks can be updated to change their status.
 - **Delete Task**: Users can delete tasks they no longer need.
 - **Filter Tasks**: Users can filter tasks based on their status (e.g., "To Do," "In Progress," "Done").
+- **Filter Tasks**: Users can sort tasks based on their title.
 
 ## Assumptions
 
 - Users must have an account and be authenticated to access the application.
-- Tasks can only be deleted by the user who created them.
 
 ## Feedback
 
