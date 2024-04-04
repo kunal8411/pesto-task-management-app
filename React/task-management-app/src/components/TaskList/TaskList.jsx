@@ -16,14 +16,11 @@ const TaskList = ({ tasks, updateTask, deleteTask }) => {
     setIsDeleteConfirm(false);
     deleteTask(deleteTaskId);
   };
-  console.log("taskstasks", tasks);
   const setFilterOption = (event) => {
     setFilteredOption(event.target.value);
-    console.log("event is ", event.target.value);
     const filteredOptions = tasks.filter((item) => {
       return item.status === event.target.value;
     });
-    console.log({ filteredOptions });
     setTasks(filteredOptions);
   };
   const handleSort = () => {

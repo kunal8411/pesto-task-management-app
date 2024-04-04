@@ -16,11 +16,9 @@ const Login = () => {
     }
   }, []);
   const handleSignIn = () => {
-    // Redirect to the /signin route
     navigate("/signup");
   };
   const onTextChange = (name, value) => {
-    // console.log({ name, value });
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -28,7 +26,6 @@ const Login = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("BTN CALLED IN LOGIN FORM");
     const { email, password } = formData;
     axios
       .post(`${BASE_URL}api/login`, { email, password })

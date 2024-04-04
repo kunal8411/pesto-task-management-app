@@ -5,7 +5,6 @@ const Task = require('../models/Task');
 
 router.get('/', async (req, res) => {
   try {
-    console.log("HELLO THERE")
     const tasks = await Task.find();
     res.json(tasks);
   } catch (err) {
@@ -14,7 +13,6 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  console.log("I am heere ")
   const task = new Task({
     title: req.body.title,
     description: req.body.description,

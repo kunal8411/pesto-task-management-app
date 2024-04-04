@@ -15,7 +15,7 @@ const TaskForm = ({ addTask }) => {
 
   return (
     <div className="w-full p-6 bg-gray-100 rounded-lg shadow-md task-form-container sm:w-96">
-      <h2 className="mb-4 text-xl font-bold">Add New Task</h2>
+      <h2 className="mb-4 text-base font-bold">Add New Task</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="title" className="block mb-2 font-semibold text-gray-700">Title</label>

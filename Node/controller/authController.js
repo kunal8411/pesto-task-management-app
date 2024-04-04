@@ -12,23 +12,8 @@ exports.signIn = async (req, res) => {
         .status(400)
         .json({ message: "User with this email already exists" });
     }
-    console.log("TRMIED PASSWORD", password.trim());
     // Hash the password
     const hashedPassword = await bcrypt.hash(password.trim(), 10);
-    // const hashedPassword1 = await bcrypt.hash(password.trim(), 10);
-    // const hashedPassword2 = await bcrypt.hash(password.trim(), 10);
-    // const hashedPassword3 = await bcrypt.hash(password.trim(), 10);
-    // const hashedPassword4 = await bcrypt.hash(password.trim(), 10);
-    // const hashedPassword5 = await bcrypt.hash(password.trim(), 10);
-    // console.log({
-    //   hashedPassword,
-    //   hashedPassword1,
-    //   hashedPassword2,
-    //   hashedPassword3,
-    //   hashedPassword4,
-    //   hashedPassword5,
-    // });
-    // Create a new user
     const newUser = new User({
       name,
       email,

@@ -12,7 +12,6 @@ const HomePage = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    console.log(token)
     if (!token) {
       navigate("/login");
     }
@@ -27,7 +26,6 @@ const HomePage = () => {
   }, []);
 
   const addTask = (task) => {
-    console.log({ task });
     axios
       .post(`${BASE_URL}api/tasks`, task)
       .then((res) => setTasks([...tasks, res.data]))
@@ -52,7 +50,7 @@ const HomePage = () => {
   return (
     <>
       <div className="app-class">
-        <div className="p-5 font-bold bg-gray-200">
+        <div className="p-5 text-xl font-bold bg-gray-200">
           Task Management Application
         </div>
         <TaskForm addTask={addTask} />

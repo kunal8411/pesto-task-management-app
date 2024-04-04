@@ -38,7 +38,6 @@ const SignUp = () => {
       .then((res) => navigate("/login"))
       .catch((err) => console.log(err));
   };
-  console.log("formData", formData);
   return (
     <>
       <section className="bg-gray-50 dark:bg-gray-900">
